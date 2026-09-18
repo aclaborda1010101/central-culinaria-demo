@@ -28,7 +28,7 @@
 (function(d){var h=d.documentElement;h.classList.remove('no-js');h.classList.add('js');
 try{if(sessionStorage.getItem('cc-visited'))h.classList.add('is-loaded','skip-preloader');}catch(e){}
 try{if(localStorage.getItem('cc-motion')==='off')h.classList.add('motion-off');}catch(e){}
-if(location.search.indexOf('notas=0')>-1)h.classList.add('hide-notes');})(document);
+try{var n=location.search.match(/notas=([01])/);if(n)sessionStorage.setItem('cc-notas',n[1]);if(sessionStorage.getItem('cc-notas')==='0')h.classList.add('hide-notes');}catch(e){}})(document);
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://www.centralculinaria.com/#organization","name":"Central Culinaria","url":"https://www.centralculinaria.com","logo":"https://www.centralculinaria.com/assets/img/logo-navy.png","foundingDate":"2020","description":"Central Culinaria desarrolla y elabora soluciones gastronómicas de quinta gama, preparadas y ultracongeladas, para restaurantes, hoteles, catering y distribución.","email":"info@centralculinaria.com","telephone":"+34 900 000 000","sameAs":[]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.centralculinaria.com/"},{"@type":"ListItem","position":2,"name":"Productos","item":"https://www.centralculinaria.com/productos-quinta-gama/"},{"@type":"ListItem","position":3,"name":"Guarniciones","item":"https://www.centralculinaria.com/productos-quinta-gama/guarniciones/"},{"@type":"ListItem","position":4,"name":"Verduras asadas de temporada"}]}</script>
