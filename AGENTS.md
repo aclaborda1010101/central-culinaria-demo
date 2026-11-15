@@ -32,8 +32,8 @@ Lo leen Claude Code (a través de `CLAUDE.md`), Codex y cualquier otro agente. V
 - `contacto/` — formulario. Se rellena desde la URL (`motivo`, `perfil`, `producto`) y **no envía nada**: valida y enseña un mensaje de «enviado».
 - `blog/` — índice y un artículo.
 - `assets/css/main.css` — todos los estilos, en un fichero.
-- `assets/js/main.js` y `assets/js/chunks/` — JavaScript compilado y minificado, sin mapas de fuente. Lleva GSAP (con ScrollTrigger) y Lenis. Los trozos (`catalog`, `form`, `heroReel`, `pages`, `process`, `turntable`, `zoomword`) se cargan bajo demanda.
-- `assets/img/` — logotipos, iconos e imagen para redes. Las fotos y los vídeos de las páginas vienen de Unsplash y Pexels, desde sus servidores.
+- `assets/js/main.js` y `assets/js/chunks/` — JavaScript compilado y minificado, sin mapas de fuente. Lleva GSAP (con ScrollTrigger) y Lenis. Los trozos (`catalog`, `form`, `heroReel`, `pages`, `process`, `turntable`, `zoomword`) se cargan bajo demanda; `chunk-IHRIUEAN.js` es la parte común a todos.
+- `assets/img/` — logotipos, iconos e imagen para redes. Las fotos y los vídeos de las páginas vienen de Unsplash y Pexels, y las tipografías de Google Fonts: todo se carga desde sus servidores.
 - `sitemap.xml` (33 direcciones), `robots.txt` (`Disallow: /`) y `.nojekyll`.
 
 En total, 35 páginas HTML. Todas llevan `noindex, nofollow`.
@@ -43,7 +43,7 @@ En total, 35 páginas HTML. Todas llevan `noindex, nofollow`.
 - **No edites a mano lo compilado** (`*.html`, `assets/`, `sitemap.xml`, `robots.txt`). Los cambios de la web se hacen en la fuente y se vuelve a generar. Un cambio hecho aquí se perdería en la siguiente publicación.
 - **La publicación borra lo que no sea lo compilado.** Según la ficha de Lince, el guion de publicación (`deploy.mjs`, fuera de este repo) empuja directo a `main` y borra todo lo demás. Eso incluye `AGENTS.md`, `CLAUDE.md`, `ESTADO.md` y `docs/`. Si se publica antes de arreglarlo, hay que reponer estos ficheros.
 - **Publicar lo lanza una persona, nunca un agente.**
-- **Es una demo.** Las fotos y los vídeos son provisionales (bancos de imágenes) y el teléfono de los datos estructurados es de relleno. Si el catálogo y los textos están validados por el cliente: no consta. No los copies a otro sitio como datos reales.
+- **Es una demo con contenido de ejemplo.** Lo dicen las notas de «Prototipo» de las propias páginas: el catálogo está pendiente de validar con el catálogo real, y los datos de las 18 fichas (formatos, tiempos, ingredientes y alérgenos) están pendientes de la ficha técnica real. Las fotos y los vídeos son provisionales (bancos de imágenes). El teléfono (`+34 900 000 000`) parece de relleno. Si el resto de textos está validado por el cliente: no consta. No copies nada de esto a otro sitio como dato real, y menos los alérgenos.
 
 ## Ramas y PRs
 
@@ -55,7 +55,7 @@ En total, 35 páginas HTML. Todas llevan `noindex, nofollow`.
 
 ## Lo que no se toca salvo que una persona lo pida en la conversación
 
-- El cierre a buscadores: `noindex` en las páginas y `Disallow: /` en `robots.txt`.
+- El cierre a buscadores: `noindex` en las páginas y `Disallow: /` en `robots.txt`. Lo que cierra de verdad es `noindex`: el `robots.txt` queda bajo `/central-culinaria-demo/` y los buscadores solo lo leen en la raíz del dominio.
 - El formulario: conectarlo a un correo o a un CRM recoge datos personales. El destino está por decidir.
 - La visibilidad del repo, los ajustes de GitHub Pages y cualquier cosa de publicación.
 - Secretos: no los leas, no los imprimas y no los copies a ningún sitio. En este repo no debe haber ninguno.
